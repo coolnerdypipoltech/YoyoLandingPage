@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3 Feet</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>YoYo</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <style>
       * {
         margin: 0;
@@ -13,39 +13,160 @@
         overflow-y: hidden;
       }
 
+      .bodyContainer {
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
 
-
-      .text-container {
-        width: 100dvw;
-        height: 100dvh;
-        text-align: center;
-        display: flex;
-        align-content: center;
-        flex-direction: column;
-        justify-content: center;
+      .disclaimerText {
         position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+        color: white;
+        align-items: flex-end;
+        font-family: "Georgia", serif;
+      }
+
+      .disclaimerText a {
+        text-decoration: none;
+        color: white;
+        font-family: "Georgia", serif;
+      }
+      .logos {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: flex-end;
+      }
+
+      .padRight{
+        padding-right: 20px;
+      }
+
+      .padLeft{
+        padding-left: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 20PX;
+      }
+
+      .mainContainer{
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .mainImg{
+        max-width: 200px;
+      }
+
+      .mainVideo{
+        max-height: 600px;
+      }
+
+      .mainVideoContainer{
+        display: flex;
+        justify-content: center;
         align-items: center;
-        z-index: 0;
-        padding-top: 128px;
-        gap: 70px;
+        height: 100%;
+        width: 1060px;
+        padding-right: 20px;
+        flex-direction: column;
       }
 
-
-
-      .title {
-        font-size: 175px;
-        color: #d2ff00;
-        margin-bottom: 20px;
-        font-family: "New Order Semibold", sans-serif;
+      .mainImgContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 1100px);
+        flex-direction: column;
       }
 
+      .mainImgText{
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 10px;
+        position: relative;
+        font-family: "Georgia Bold", serif;
+
+      }
+
+      .nameText{
+        color: gray;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 10px;
+        position: relative;
+        font-family: "Georgia", serif;
+      }
+
+      .mainVideoText{
+        color: gray;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 10px;
+        position: relative;
+        text-align: right;
+        width: 100%;
+        font-family: "Georgia", serif;
+      }
+      @font-face {
+        font-family: "Georgia Bold";
+        src: url("Georgia Bold.ttf") format("opentype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Georgia";
+        src: url("Georgia.ttf") format("opentype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
 
     </style>
   </head>
   <body>
-    <div class="text-container">
-      <p class="title">coming soon</p>
+    <div class="bodyContainer">
+      <div class="disclaimerText">
+        <div class="padLeft">
+          <p>© 2024 YoYO. Todos los derechos reservados</p>
+          <a href="https://bigfoot.com.mx/" target="_blank"
+            >Politicas de privacidad</a
+          >
+        </div>
+        <div class="padRight">
+          <div class="logos">
+          <img src="RabbitIcon.png" alt="YoYO Logo" width="50" />
+          <img src="RabbitIcon.png" alt="YoYO Logo" width="50" />
+        </div>
+        <p class="nameText">by Cool Nerdy People</p>
+        </div>
+      </div>
+      <div class="mainContainer">
+        <div class="mainImgContainer">
+          <img class="mainImg" src="Logo YOYO.png" alt="YoYO Logo"  />
+          <p class="mainImgText">Reap what you drink</p>
+        </div>
+        <div class="mainVideoContainer">
+          <img class="mainVideo" src="Fondo.png" alt="Bigfoot Logo"  />
+          <p class="mainVideoText">Welcome to YOYO</p>
+        </div>
+        
+      </div>
     </div>
-    
   </body>
 </html>
