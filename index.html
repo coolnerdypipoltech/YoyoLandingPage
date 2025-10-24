@@ -49,24 +49,32 @@
         gap:20px
       }
 
+      .star{
+        position: relative;
+        bottom: 74px;
+        height: 11px;
+        left: 20px;
+      }
+
 
 
       .textFotter{
         font-family: "Georgia", serif;
-        font-size: 14px;
+        font-size: 15px;
         color: #ffffff;
       }
 
       .textFotterLink{
         font-family: "Georgia", serif;
-        font-size: 14px;
+        font-size: 15px;
         text-decoration: none;
-        color: #ff0000;
+        color: #E05361;
       }
 
       .yoyoLogo {
-        width: 150px;
+        width: 175px;
         height: auto;
+        padding-bottom: 35px;
       }
 
       .yoyoRabbit{
@@ -83,14 +91,14 @@
 
       .yoyoTitle{
         font-family: "Georgia ", serif;
-        font-size: 48px;
+        font-size: 45px;
         color: #ffffff;
-        margin-top: 20px;
+        margin-top: 0px;
       }
 
       .yoyoSubtitle{
         font-family: "Georgia", serif;
-        font-size: 14px;
+        font-size: 15px;
         color: #ffffff;
         margin-top: 10px;
         text-align: center;
@@ -107,6 +115,11 @@
       @media (max-width: 520px) {
         .yoyoTitle {
           font-size: 32px;
+        }
+        .star{
+          left: 16px;
+          bottom: 60px;
+          height: 9px;
         }
 
         .yoyoSubtitle {
@@ -130,10 +143,12 @@
         .yoyoTitle {
           font-size: 24px;
         }
-
-        .yoyoSubtitle {
-          font-size: 9px;
+        .star{
+          left: 12px;
+          bottom: 45px;
+          height: 7px;
         }
+
 
         .yoyoLogo {
           width: 100px;
@@ -154,14 +169,6 @@
       }
 
       @font-face {
-        font-family: "Georgia Bold";
-        src: url("Georgia Bold.ttf") format("opentype");
-        font-weight: 600;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
         font-family: "Georgia";
         src: url("Georgia.ttf") format("opentype");
         font-weight: 600;
@@ -175,16 +182,17 @@
     <div class="bodyContainer">
       <div class="mainContainer">
         <img src="Logo YOYO.png" class="yoyoLogo" alt="YoYo Logo" />
-        <p class="yoyoTitle">You've Seen The Rabbit</p>
-        <p class="yoyoSubtitle">Follow it into Mexico City's hidden scene of experiences, nightlife and rewards.</p>
-        <img src="RabbitIcon.png" class="yoyoRabbit" alt="Rabbit Icon">
+        <p class="yoyoTitle">You’ve Seen The Rabbit</p>
+        <p class="yoyoSubtitle">Follow it into Mexico City’s hidden scene of experiences, nightlife and rewards.</p>
+        <img src="Rabbit_icon_OFF.svg" class="yoyoRabbit" alt="Rabbit Icon">
+        <img src="Trazado 849@3x.png" class="star" alt="Star Icon">
       </div>
       <div class="footerContainer">
           <p class="cnpSubtitle">By</p>
-          <img src="RabbitIcon.png" class="cnpIcon" alt="CNP Icon">
+          <img src="Rabbit_icon_OFF@2x.png" class="cnpIcon" alt="CNP Icon">
         <div class="textFooterContainer">
          
-          <p class="textFotter">YOYO© All Rights Reserved 2025.</p>
+          <p class="textFotter">YOYO© All Rights Reserved 2025</p>
           <a href="https://www.google.com" class="textFotterLink">Privacy Policy</a>
         </div>
     </div>
