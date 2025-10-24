@@ -16,111 +16,143 @@
       .bodyContainer {
         width: 100vw;
         height: 100vh;
-        background-color: #000000;
+        background: url(Fondo.png);
         overflow-x: hidden;
         overflow-y: hidden;
       }
 
-      .disclaimerText {
-        position: absolute;
-        bottom: 20px;
-        width: 100%;
-        text-align: left;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 30px;
-        color: white;
-        align-items: flex-end;
-        font-family: "Georgia", serif;
-      }
-
-      .disclaimerText a {
-        text-decoration: none;
-        color: white;
-        font-family: "Georgia", serif;
-      }
-      .logos {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        justify-content: flex-end;
-      }
-
-      .padRight{
-        padding-right: 20px;
-      }
-
-      .padLeft{
-        padding-left: 20px;
-        display: flex;
-        flex-direction: row;
-        gap: 20PX;
-      }
-
       .mainContainer{
         width: 100%;
-        position: absolute;
-        top: 0px;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .mainImg{
-        max-width: 200px;
-      }
-
-      .mainVideo{
-        max-height: 600px;
-      }
-
-      .mainVideoContainer{
-        display: flex;
-        justify-content: center;
-        align-items: center;
         height: 100%;
-        width: 1060px;
-        padding-right: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
         flex-direction: column;
+        padding-top: 12vh;
       }
 
-      .mainImgContainer{
+      .footerContainer{
+        width: 100%;
+        height: 25%;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: calc(100% - 1100px);
+        position: absolute;
+        bottom: 0;
         flex-direction: column;
       }
 
-      .mainImgText{
-        color: white;
-        text-align: center;
-        font-size: 18px;
-        margin-top: 10px;
-        position: relative;
-        font-family: "Georgia Bold", serif;
-
+      .textFooterContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:20px
       }
 
-      .nameText{
-        color: gray;
-        text-align: center;
+
+
+      .textFotter{
+        font-family: "Georgia", serif;
         font-size: 14px;
-        margin-top: 10px;
-        position: relative;
-        font-family: "Georgia", serif;
+        color: #ffffff;
       }
 
-      .mainVideoText{
-        color: gray;
-        text-align: center;
-        font-size: 18px;
-        margin-top: 10px;
-        position: relative;
-        text-align: right;
-        width: 100%;
+      .textFotterLink{
         font-family: "Georgia", serif;
+        font-size: 14px;
+        text-decoration: none;
+        color: #ff0000;
       }
+
+      .yoyoLogo {
+        width: 150px;
+        height: auto;
+      }
+
+      .yoyoRabbit{
+        width: 100px;
+        height: auto;
+        margin-top: 20px;
+      }
+
+      .cnpIcon{
+        width: 100px;
+        height: auto;
+        margin-bottom: 30px;
+      }
+
+      .yoyoTitle{
+        font-family: "Georgia ", serif;
+        font-size: 48px;
+        color: #ffffff;
+        margin-top: 20px;
+      }
+
+      .yoyoSubtitle{
+        font-family: "Georgia", serif;
+        font-size: 14px;
+        color: #ffffff;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .cnpSubtitle{
+        font-family: "Georgia", serif;
+        font-size: 14px;
+        color: #ffffff;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      @media (max-width: 520px) {
+        .yoyoTitle {
+          font-size: 32px;
+        }
+
+        .yoyoSubtitle {
+          width: 80%;
+        }
+
+        .yoyoLogo {
+          width: 120px;
+        }
+
+        .yoyoRabbit {
+          width: 80px;
+        }
+
+        .cnpIcon {
+          width: 80px;
+        }
+      }
+
+      @media(max-width: 420px) {
+        .yoyoTitle {
+          font-size: 24px;
+        }
+
+        .yoyoSubtitle {
+          font-size: 9px;
+        }
+
+        .yoyoLogo {
+          width: 100px;
+        }
+
+        .yoyoRabbit {
+          width: 60px;
+        }
+
+        .textFooterContainer{
+          width: 80%;
+          flex-direction: column;
+        }
+
+        .cnpIcon {
+          width: 60px;
+        }
+      }
+
       @font-face {
         font-family: "Georgia Bold";
         src: url("Georgia Bold.ttf") format("opentype");
@@ -138,35 +170,23 @@
       }
 
     </style>
-  </head>
+  </head> 
   <body>
     <div class="bodyContainer">
-      <div class="disclaimerText">
-        <div class="padLeft">
-          <p>© 2024 YoYO. Todos los derechos reservados</p>
-          <a href="https://bigfoot.com.mx/" target="_blank"
-            >Politicas de privacidad</a
-          >
-        </div>
-        <div class="padRight">
-          <div class="logos">
-          <img src="RabbitIcon.png" alt="YoYO Logo" width="50" />
-          <img src="RabbitIcon.png" alt="YoYO Logo" width="50" />
-        </div>
-        <p class="nameText">by Cool Nerdy People</p>
-        </div>
-      </div>
       <div class="mainContainer">
-        <div class="mainImgContainer">
-          <img class="mainImg" src="Logo YOYO.png" alt="YoYO Logo"  />
-          <p class="mainImgText">Reap what you drink</p>
-        </div>
-        <div class="mainVideoContainer">
-          <img class="mainVideo" src="Fondo.png" alt="Bigfoot Logo"  />
-          <p class="mainVideoText">Welcome to YOYO</p>
-        </div>
-        
+        <img src="Logo YOYO.png" class="yoyoLogo" alt="YoYo Logo" />
+        <p class="yoyoTitle">You've Seen The Rabbit</p>
+        <p class="yoyoSubtitle">Follow it into Mexico City's hidden scene of experiences, nightlife and rewards.</p>
+        <img src="RabbitIcon.png" class="yoyoRabbit" alt="Rabbit Icon">
       </div>
+      <div class="footerContainer">
+          <p class="cnpSubtitle">By</p>
+          <img src="RabbitIcon.png" class="cnpIcon" alt="CNP Icon">
+        <div class="textFooterContainer">
+         
+          <p class="textFotter">YOYO© All Rights Reserved 2025.</p>
+          <a href="https://www.google.com" class="textFotterLink">Privacy Policy</a>
+        </div>
     </div>
   </body>
 </html>
