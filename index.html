@@ -16,10 +16,19 @@
       .bodyContainer {
         width: 100vw;
         height: 100vh;
-        background: url(Fondo.png);
+        background: url(YOYO_VID_01.mp4);
         overflow-x: hidden;
         overflow-y: hidden;
 background-size: cover;
+      }
+
+      .videoBody {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
       }
 
       .mainContainer{
@@ -159,6 +168,7 @@ background-size: cover;
     </style>
   </head> 
   <body>
+    <video claz src="YOYO_VID_01.mp4" autoplay muted loop id="myVideo" class="videoBody"></video>
     <div class="bodyContainer">
       <div class="mainContainer">
         <img src="Logo YOYO.png" class="yoyoLogo" alt="YoYo Logo" />
