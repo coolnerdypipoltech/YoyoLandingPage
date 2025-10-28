@@ -173,9 +173,20 @@
 
     </style>
   </head> 
+
+  <script>
+    var video = document.getElementsById("videoID");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("muted", "");
+    video.play();
+  </script>
+
+
   <body>
     <div class="videoContainer">
-      <video src="YOYO_VID_01.webm" playsinline  autoplay muted loop id="myVideo" class="videoBody"></video>
+      <video id="videoID"  playsinline  autoplay muted loop id="myVideo" class="videoBody">
+        <source src="YOYO_VID_01.webm">
+      </video>
     </div>
     
     <div class="bodyContainer">
