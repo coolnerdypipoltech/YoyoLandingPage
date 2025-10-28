@@ -14,16 +14,16 @@
       }
 
       .bodyContainer {
-        width: 100vw;
-        height: 100vh;
+        width: 100dvw;
+        height: 100dvh;
         overflow-x: hidden;
         overflow-y: hidden;
         background-size: cover;
       }
 
       .videoBody {
-        height: 100%;
-        width: 100%;
+        width: 100dvw;
+        height: 100dvh;
         object-fit: cover;
       }
 
@@ -175,7 +175,7 @@
   </head> 
   <body>
     <div class="videoContainer">
-      <video src="YOYO_VID_01.mp4" autoplay muted loop id="myVideo" class="videoBody"></video>
+      <video src="YOYO_VID_01.mp4" playsinline  autoplay muted loop id="myVideo" class="videoBody"></video>
     </div>
     
     <div class="bodyContainer">
