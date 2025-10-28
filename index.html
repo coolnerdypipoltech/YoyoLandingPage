@@ -19,7 +19,6 @@
         overflow-x: hidden;
         overflow-y: hidden;
         background-size: cover;
-        background-image: url('YOYO_VID_01.gif');
       }
 
       .videoBody {
@@ -175,9 +174,13 @@
     </style>
   </head> 
 
-
-
   <body>
+    <div class="videoContainer">
+      <video id="videoID"  playsinline playsInline controls="true"  autoplay muted loop id="myVideo" class="videoBody">
+        <source src="YOYO_VID_01.webm" type="video/webm" />
+      </video>
+    </div>
+    
     <div class="bodyContainer">
       <div class="mainContainer">
         <img src="Logo YOYO.png" class="yoyoLogo" alt="YoYo Logo" />
@@ -195,7 +198,4 @@
         </div>
     </div>
   </body>
-
-  
 </html>
-
