@@ -26,7 +26,7 @@ function PreRegister() {
     
     // Validate form
     if (!formData.name.trim() || !formData.email.trim()) {
-      setMessage('Por favor completa todos los campos');
+      setMessage('Please complete all fields');
       setMessageType('error');
       return;
     }
@@ -34,7 +34,28 @@ function PreRegister() {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setMessage('Por favor ingresa un correo válido');
+      setMessage('Please enter a valid email address');
+      setMessageType('error');
+      return;
+    }
+
+    const age = parseInt(formData.age, 10);
+    if (isNaN(age) || age < 18 || age > 100) {
+      setMessage('Please enter a valid age between 18 and 100');
+      setMessageType('error');
+      return;
+    }
+
+    const mobileRegex = /^\d{7,15}$/; // Simple regex for mobile number
+    if (!mobileRegex.test(formData.mobile)) {
+      setMessage('Please enter a valid mobile number (7-15 digits)');
+      setMessageType('error');
+      return;
+    }
+
+    const instagramRegex = /^@?(\w){1,30}$/; // Simple regex for Instagram handle
+    if (!instagramRegex.test(formData.instagram)) {
+      setMessage('Please enter a valid Instagram handle');
       setMessageType('error');
       return;
     }
@@ -55,14 +76,20 @@ function PreRegister() {
         },
         body: JSON.stringify({
           name: formData.name,
-          email: formData.email
+          age: formData.age,
+          email: formData.email,
+          mobile: formData.mobile,
+          instagram: formData.instagram,
+          country: formData.country,
+          work: formData.work,
+          favorite_spots: formData.favorite_spots
         })
       });
 
       if (response.ok) {
-        setMessage('¡Registro exitoso! Gracias por registrarte.');
+        setMessage('Registration successful! Thank you for signing up.');
         setMessageType('success');
-        setFormData({ name: '', email: '' });
+        setFormData({ name: '', age: '', email: '', mobile: '', instagram: '', country: '', work: '', favorite_spots: '' });
         
         // Re-enable submit button after 3 seconds
         setTimeout(() => {
@@ -70,15 +97,15 @@ function PreRegister() {
         }, 3000);
       } else {
         const errorData = await response.json();
-        setMessage(errorData.message || 'Error al registrar. Por favor intenta de nuevo.');
+        setMessage(errorData.message || 'Registration error. Please try again.');
         setMessageType('error');
         // Re-enable submit button after 2 seconds on error
-        setTimeout(() => {
+        setTimeout(() => {  
           setIsSubmitting(false);
         }, 2000);
       }
     } catch (error) {
-      setMessage('Error de conexión. Por favor intenta de nuevo.');
+      setMessage('Connection Error. Try again later.');
       setMessageType('error');
       // Re-enable submit button after 2 seconds on error
       setTimeout(() => {
@@ -97,32 +124,136 @@ function PreRegister() {
 
       <div className="bodyContainer">
         <div className="mainContainer">
-          <img src={yoyoLogo} className="yoyoLogo" alt="YoYo Logo" />
-          <p className="yoyoTitle">Pre-registro</p>
-          <p className="yoyoSubtitle">Únete a la experiencia YOYO</p>
+          <img src={yoyoLogo} className="yoyoLogo" style={{paddingBottom: "0px"}} alt="YoYo Logo" />
+          <p className="yoyoSubtitle" style={{paddingBottom: "20px", fontSize: "14px"}}>Enter the hidden loop</p>
+          <p className="yoyoTitle">YoYo Membership</p>
+          <p className="yoyoSubtitle"style={{paddingBottom: "20px", fontSize: "18px"}}>Pre-Sign Up</p>
 
           <form className="preregister-form" onSubmit={handleSubmit}>
             <div className="form-group">
+              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
+                <p className="formtitle">Your full name</p> 
+                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
+              </div> 
+              
               <input
                 type="text"
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Nombre completo"
                 className="form-input"
                 disabled={isSubmitting}
               />
             </div>
 
             <div className="form-group">
+              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
+                <p className="formtitle">Your age</p> 
+                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
+              </div> 
+              <input
+                type="number"
+                id="age"
+                name="age"
+                value={formData.age}
+                onChange={handleChange}
+                className="form-input"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group">
+              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
+                <p className="formtitle">Email address</p> 
+                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
+              </div> 
               <input
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Correo electrónico"
+                className="form-input"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group">
+              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
+                <p className="formtitle">Mobile number</p> 
+                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
+              </div> 
+              <input
+                type="number"
+                id="mobile"
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                className="form-input"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group">
+              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
+                <p className="formtitle">Instagram handle</p> 
+                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
+              </div> 
+              <input
+                type="text"
+                id="instagram"
+                name="instagram"
+                value={formData.instagram}
+                onChange={handleChange}
+                className="form-input"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group">
+              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
+                <p className="formtitle">Country of residence</p> 
+                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
+              </div> 
+              <input
+                type="text"
+                id="country"
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                className="form-input"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group">
+              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
+                <p className="formtitle">What do you do?</p> 
+                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
+              </div> 
+              <input
+                type="text"
+                id="work"
+                name="work"
+                value={formData.work}
+                onChange={handleChange}
+                className="form-input"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group">
+              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
+                <p className="formtitle">Your usual spots (upt to 3)</p> 
+                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
+              </div> 
+              <input
+                type="text"
+                id="favorite_spots"
+                name="favorite_spots"
+                value={formData.favorite_spots}
+                onChange={handleChange}
                 className="form-input"
                 disabled={isSubmitting}
               />
@@ -134,22 +265,22 @@ function PreRegister() {
               </div>
             )}
 
+            <p className="formtitle" style={{textAlign: "center"}}>Every YoYo membership is reviewed by a human team. We'll be in touch.</p> 
             <button 
               type="submit" 
               className="submit-button"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Enviando...' : 'Registrarse'}
+              {isSubmitting ? 'Sending...' : 'Send Application'}
             </button>
           </form>
         </div>
 
-        <div className="footerContainer">
-          <p className="cnpSubtitle">By</p>
-          <img src={logo} className="cnpIcon" alt="CNP Icon" />
-          <div className="textFooterContainer">
-            <p className="textFotter">YOYO© All Rights Reserved 2025</p>
-            <a href="https://www.google.com" className="textFotterLink">Privacy Policy</a>
+        <div >
+          
+          <div className="textFooterContainer" style={{width: "100%", gap: "10px", paddingBottom: "64px", paddingTop: "32px"}}>
+            <a style={{fontSize: "14px", textAlign: "center"}} href="https://www.google.com" className="textFotterLink">Privacy Policy</a>
+            <p className="textFotter" style={{fontSize: "16px", textAlign: "center"}}>YOYO© All Rights Reserved 2025</p>
           </div>
         </div>
       </div>

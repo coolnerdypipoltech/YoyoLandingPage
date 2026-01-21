@@ -19,11 +19,12 @@
   font-family: "Georgia", serif;
   font-size: 14px;
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   outline: none;
   transition: all 0.3s ease;
+
 }
 
 .form-input::placeholder {
@@ -40,19 +41,42 @@
   cursor: not-allowed;
 }
 
-.submit-button {
+.registerContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-height: 100vh;
+  overflow-y: auto;
+  margin:  0px;
+  padding: 0px;
   width: 100%;
+}
+
+.formtitle{
+  font-family: "Georgia", serif;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.submit-button {
+  width:  50%;
   padding: 15px 20px;
   margin-top: 10px;
   font-family: "Georgia", serif;
   font-size: 16px;
-  font-weight: bold;
   color: #ffffff;
   background-color: #E05361;
   border: none;
-  border-radius: 8px;
+  border-radius: 32px;
   cursor: pointer;
   transition: all 0.3s ease;
+  -webkit-border-radius: 32px;
+  -moz-border-radius: 32px;
+  -ms-border-radius: 32px;
+  -o-border-radius: 32px;
 }
 
 .submit-button:hover:not(:disabled) {
