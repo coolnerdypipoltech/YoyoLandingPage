@@ -1,0 +1,36 @@
+import React from 'react';
+import logo from "../assets/Rabbit_icon_OFF@2x.png";
+import yoyoLogo from "../assets/Logo YOYO.png";
+import yoyovideo from "../assets/YOYO_VID_01.webm";
+import iconweb from "../assets/Icon_web_rabbitred.png";
+
+function Home() {
+  return (
+    <div className="App">
+      <div className="videoContainer">
+        <video id="videoID" playsInline autoPlay muted loop className="videoBody">
+          <source src={yoyovideo} type="video/webm" />
+        </video>
+      </div>
+
+      <div className="bodyContainer">
+        <div className="mainContainer">
+          <img src={yoyoLogo} className="yoyoLogo" alt="YoYo Logo" />
+          <p className="yoyoTitle">You've Seen The Rabbit</p>
+          <p className="yoyoSubtitle">Follow it into Mexico City's hidden scene of experiences, nightlife and rewards.</p>
+          <img src={iconweb} className="yoyoRabbit" alt="Rabbit Icon"></img>
+        </div>
+        <div className="footerContainer">
+          <p className="cnpSubtitle">By</p>
+          <img src={logo} className="cnpIcon" alt="CNP Icon"></img>
+          <div className="textFooterContainer">
+            <p className="textFotter">YOYO© All Rights Reserved 2025</p>
+            <a href="https://www.google.com" className="textFotterLink">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Home;

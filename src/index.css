@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+      * {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+
+      .bodyContainer {
+        width: 100dvw;
+        height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-size: cover;
+      }
+
+      .videoBody {
+        width: 100dvw;
+        height: 100dvh;
+        object-fit: cover;
+      }
+
+      .videoContainer{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .mainContainer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 18vh;
+      }
+
+      .footerContainer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 30px;
+        flex-direction: column;
+      }
+
+      .textFooterContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:20px
+      }
+
+      .textFotter{
+        font-family: "Georgia", serif;
+        font-size: 10px;
+        color: #ffffff;
+      }
+
+      .textFotterLink{
+        font-family: "Georgia", serif;
+        font-size: 10px;
+        text-decoration: none;
+        color: #E05361;
+      }
+
+      .yoyoLogo {
+        width: 140px;
+        height: auto;
+        padding-bottom: 35px;
+      }
+
+      .yoyoRabbit{
+        width: 70px;
+        height: auto;
+        margin-top: 30px;
+      }
+
+      .cnpIcon{
+        width: 70px;
+        height: auto;
+        margin-bottom: 30px;
+      }
+
+      .yoyoTitle{
+        font-family: "Georgia ", serif;
+        font-size: 30px;
+        color: #ffffff;
+        margin-top: 0px;
+      }
+
+      .yoyoSubtitle{
+        font-family: "Georgia", serif;
+        font-size: 10px;
+        color: #ffffff;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .cnpSubtitle{
+        font-family: "Georgia", serif;
+        font-size: 14px;
+        color: #ffffff;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      @media (max-width: 520px) {
+        .yoyoTitle {
+          font-size: 24px;
+        }
+
+        .yoyoSubtitle {
+          width: 80%;
+        }
+
+        .yoyoLogo {
+          width: 110px;
+        }
+
+        .yoyoRabbit {
+          width: 60px;
+        }
+
+        .cnpIcon {
+          width: 60px;
+        }
+      }
+
+      @media(max-width: 420px) {
+        .yoyoTitle {
+          font-size: 18px;
+        }
+
+        .yoyoLogo {
+          width: 100px;
+        }
+
+        .yoyoRabbit {
+          width: 50px;
+        }
+
+        .textFooterContainer{
+          width: 80%;
+          flex-direction: column;
+        }
+
+        .cnpIcon {
+          width: 50px;
+        }
+      }
+
+      @font-face {
+        font-family: "Georgia";
+        src: url("./assets/Georgia.ttf") format("opentype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
