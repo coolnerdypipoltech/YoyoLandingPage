@@ -8,7 +8,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pregister" element={<PreRegister />} />
+        <Route path="/presignup" element={<PreRegister />} />
+        <Route path="/YoyoLandingPage" element={<Home />} />
+        <Route path="/YoyoLandingPage/presignup" element={<PreRegister />} />
       </Routes>
     </Router>
   );

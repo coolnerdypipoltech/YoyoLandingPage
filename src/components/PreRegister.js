@@ -1,62 +1,63 @@
-import React, { useState } from 'react';
-import './PreRegister.css';
+import React, { useState } from "react";
+import "./PreRegister.css";
 import yoyoLogo from "../assets/Logo YOYO.png";
-import logo from "../assets/Rabbit_icon_OFF@2x.png";
+import logo from "../assets/Icon_Tooltip.png";
 import yoyovideo from "../assets/YOYO_VID_01.webm";
+import Tooltip from "./tooltip";
 
 function PreRegister() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: ''
+    name: "",
+    email: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState(''); // 'success' or 'error'
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // 'success' or 'error'
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Validate form
     if (!formData.name.trim() || !formData.email.trim()) {
-      setMessage('Please complete all fields');
-      setMessageType('error');
+      setMessage("Please complete all fields");
+      setMessageType("error");
       return;
     }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setMessage('Please enter a valid email address');
-      setMessageType('error');
+      setMessage("Please enter a valid email address");
+      setMessageType("error");
       return;
     }
 
     const age = parseInt(formData.age, 10);
     if (isNaN(age) || age < 18 || age > 100) {
-      setMessage('Please enter a valid age between 18 and 100');
-      setMessageType('error');
+      setMessage("Please enter a valid age between 18 and 100");
+      setMessageType("error");
       return;
     }
 
     const mobileRegex = /^\d{7,15}$/; // Simple regex for mobile number
     if (!mobileRegex.test(formData.mobile)) {
-      setMessage('Please enter a valid mobile number (7-15 digits)');
-      setMessageType('error');
+      setMessage("Please enter a valid mobile number (7-15 digits)");
+      setMessageType("error");
       return;
     }
 
     const instagramRegex = /^@?(\w){1,30}$/; // Simple regex for Instagram handle
     if (!instagramRegex.test(formData.instagram)) {
-      setMessage('Please enter a valid Instagram handle');
-      setMessageType('error');
+      setMessage("Please enter a valid Instagram handle");
+      setMessageType("error");
       return;
     }
 
@@ -66,47 +67,70 @@ function PreRegister() {
     }
 
     setIsSubmitting(true);
-    setMessage('');
+    setMessage("");
 
     try {
-      const response = await fetch('http://64.227.105.243/api/v1/pre-registration', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        "https://admin.yoyotheclub.com/api/v1/pre-registration",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            age: formData.age,
+            email: formData.email,
+            mobile_number: formData.mobile,
+            city: formData.city,
+            instagram: formData.instagram,
+            country: formData.country,
+            work: formData.work,
+            favorite_spots: formData.favorite_spots,
+          }),
         },
-        body: JSON.stringify({
-          name: formData.name,
-          age: formData.age,
-          email: formData.email,
-          mobile: formData.mobile,
-          instagram: formData.instagram,
-          country: formData.country,
-          work: formData.work,
-          favorite_spots: formData.favorite_spots
-        })
-      });
+      );
 
       if (response.ok) {
-        setMessage('Registration successful! Thank you for signing up.');
-        setMessageType('success');
-        setFormData({ name: '', age: '', email: '', mobile: '', instagram: '', country: '', work: '', favorite_spots: '' });
-        
+        setMessage("Registration successful! Thank you for signing up.");
+        setMessageType("success");
+        setFormData({
+          name: "",
+          age: "",
+          email: "",
+          mobile: "",
+          instagram: "",
+          country: "",
+          work: "",
+          favorite_spots: "",
+          city: "",
+        });
+
         // Re-enable submit button after 3 seconds
         setTimeout(() => {
           setIsSubmitting(false);
         }, 3000);
       } else {
         const errorData = await response.json();
-        setMessage(errorData.message || 'Registration error. Please try again.');
-        setMessageType('error');
+        if (errorData.message.email) {
+          setMessage(errorData.message.email);
+        } else {
+          if (errorData.message.mobile_number) {
+            setMessage(errorData.message.mobile_number);
+          } else {
+            setMessage("Registration error. Please try again.");
+          }
+        }
+
+        setMessageType("error");
         // Re-enable submit button after 2 seconds on error
-        setTimeout(() => {  
+        setTimeout(() => {
           setIsSubmitting(false);
         }, 2000);
       }
     } catch (error) {
-      setMessage('Connection Error. Try again later.');
-      setMessageType('error');
+      setMessage("Connection Error. Try again later.");
+      setMessageType("error");
       // Re-enable submit button after 2 seconds on error
       setTimeout(() => {
         setIsSubmitting(false);
@@ -117,25 +141,67 @@ function PreRegister() {
   return (
     <div className="App">
       <div className="videoContainer">
-        <video id="videoID" playsInline autoPlay muted loop className="videoBody">
+        <video
+          id="videoID"
+          playsInline
+          autoPlay
+          muted
+          loop
+          className="videoBody"
+        >
           <source src={yoyovideo} type="video/webm" />
         </video>
       </div>
 
       <div className="bodyContainer">
         <div className="mainContainer">
-          <img src={yoyoLogo} className="yoyoLogo" style={{paddingBottom: "0px"}} alt="YoYo Logo" />
-          <p className="yoyoSubtitle" style={{paddingBottom: "20px", fontSize: "14px"}}>Enter the hidden loop</p>
-          <p className="yoyoTitle">YoYo Membership</p>
-          <p className="yoyoSubtitle"style={{paddingBottom: "20px", fontSize: "18px"}}>Pre-Sign Up</p>
+          <img
+            src={yoyoLogo}
+            className="yoyoLogo"
+            style={{ paddingBottom: "0px" }}
+            alt="YoYo Logo"
+          />
+          <p
+            className="yoyoSubtitle"
+            style={{ paddingBottom: "20px", fontSize: "11px" }}
+          >
+            Enter the hidden loop
+          </p>
+          <p
+            className="yoyoTitle"
+            style={{ paddingBottom: "25px", fontSize: "24px" }}
+          >
+            YoYo Membership
+          </p>
+          <p
+            className="yoyoSubtitle"
+            style={{ paddingBottom: "20px", fontSize: "18px" }}
+          >
+            Pre-Sign Up
+          </p>
 
-          <form className="preregister-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
-                <p className="formtitle">Your full name</p> 
-                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
-              </div> 
-              
+          <form
+            className="preregister-form"
+            style={{ overflow: "visible" }}
+            onSubmit={handleSubmit}
+          >
+            <div className="form-group" style={{ overflow: "visible" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  overflow: "visible",
+                }}
+              >
+                <p className="formtitle">Your full name</p>
+                <Tooltip
+                  src={logo}
+                  alt="info icon"
+                  text="Exactly as it appears on your official ID. This keeps your membership seamless and secure."
+                />
+              </div>
+
               <input
                 type="text"
                 id="name"
@@ -147,11 +213,22 @@ function PreRegister() {
               />
             </div>
 
-            <div className="form-group">
-              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
-                <p className="formtitle">Your age</p> 
-                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
-              </div> 
+            <div className="form-group" style={{ overflow: "visible" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  overflow: "visible",
+                }}
+              >
+                <p className="formtitle">Your age</p>
+                <Tooltip
+                  src={logo}
+                  alt="info icon"
+                  text="Certain experiences are age-gated by design."
+                />
+              </div>
               <input
                 type="number"
                 id="age"
@@ -163,13 +240,24 @@ function PreRegister() {
               />
             </div>
 
-            <div className="form-group">
-              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
-                <p className="formtitle">Email address</p> 
-                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
-              </div> 
+            <div className="form-group" style={{ overflow: "visible" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  overflow: "visible",
+                }}
+              >
+                <p className="formtitle">Email address</p>
+                <Tooltip
+                  src={logo}
+                  alt="info icon"
+                  text="Where we’ll send your invite, updates, and anything you wouldn’t want to miss."
+                />
+              </div>
               <input
-                type="email"
+                type="text"
                 id="email"
                 name="email"
                 value={formData.email}
@@ -179,11 +267,22 @@ function PreRegister() {
               />
             </div>
 
-            <div className="form-group">
-              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
-                <p className="formtitle">Mobile number</p> 
-                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
-              </div> 
+            <div className="form-group" style={{ overflow: "visible" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  overflow: "visible",
+                }}
+              >
+                <p className="formtitle">Mobile number</p>
+                <Tooltip
+                  src={logo}
+                  alt="info icon"
+                  text="For priority access, confirmations, and time-sensitive drops."
+                />
+              </div>
               <input
                 type="number"
                 id="mobile"
@@ -195,11 +294,22 @@ function PreRegister() {
               />
             </div>
 
-            <div className="form-group">
-              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
-                <p className="formtitle">Instagram handle</p> 
-                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
-              </div> 
+            <div className="form-group" style={{ overflow: "visible" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  overflow: "visible",
+                }}
+              >
+                <p className="formtitle">Instagram handle</p>
+                <Tooltip
+                  src={logo}
+                  alt="info icon"
+                  text="Public profile preferred. It helps us understand your world, taste, and energy."
+                />
+              </div>
               <input
                 type="text"
                 id="instagram"
@@ -211,11 +321,22 @@ function PreRegister() {
               />
             </div>
 
-            <div className="form-group">
-              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
-                <p className="formtitle">Country of residence</p> 
-                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
-              </div> 
+            <div className="form-group" style={{ overflow: "visible" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  overflow: "visible",
+                }}
+              >
+                <p className="formtitle">Country of residence</p>
+                <Tooltip
+                  src={logo}
+                  alt="info icon"
+                  text="YoYo experiences adapt by location."
+                />
+              </div>
               <input
                 type="text"
                 id="country"
@@ -227,11 +348,49 @@ function PreRegister() {
               />
             </div>
 
-            <div className="form-group">
-              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
-                <p className="formtitle">What do you do?</p> 
-                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
-              </div> 
+            <div className="form-group" style={{ overflow: "visible" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  overflow: "visible",
+                }}
+              >
+                <p className="formtitle">City</p>
+                <Tooltip
+                  src={logo}
+                  alt="info icon"
+                  text="So we know where to meet you."
+                />
+              </div>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                className="form-input"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group" style={{ overflow: "visible" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  overflow: "visible",
+                }}
+              >
+                <p className="formtitle">What do you do?</p>
+                <Tooltip
+                  src={logo}
+                  alt="info icon"
+                  text="Your role, industry, or main creative lane. Titles are optional — clarity is not."
+                />
+              </div>
               <input
                 type="text"
                 id="work"
@@ -243,11 +402,22 @@ function PreRegister() {
               />
             </div>
 
-            <div className="form-group">
-              <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}> 
-                <p className="formtitle">Your usual spots (upt to 3)</p> 
-                <img src={logo} alt="icon" style={{width: "20px", height: "20px", marginBottom: "5px"}}/>
-              </div> 
+            <div className="form-group" style={{ overflow: "visible" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  overflow: "visible",
+                }}
+              >
+                <p className="formtitle">Your usual spots (upt to 3)</p>
+                <Tooltip
+                  src={logo}
+                  alt="info icon"
+                  text="Bars, restaurants, or places you genuinely go back to. This helps us curate experiences that feel natural to you."
+                />
+              </div>
               <input
                 type="text"
                 id="favorite_spots"
@@ -260,27 +430,57 @@ function PreRegister() {
             </div>
 
             {message && (
-              <div className={`message ${messageType}`}>
-                {message}
-              </div>
+              <div className={`message ${messageType}`}>{message}</div>
             )}
 
-            <p className="formtitle" style={{textAlign: "center"}}>Every YoYo membership is reviewed by a human team. We'll be in touch.</p> 
-            <button 
-              type="submit" 
+            <p
+              className="formtitle"
+              style={{
+                textAlign: "center",
+                fontSize: "15px",
+                paddingTop: "30px",
+                paddingBottom: "30px",
+              }}
+            >
+              Every YoYo membership is reviewed by a human team. We'll be in
+              touch.
+            </p>
+            <button
+              type="submit"
               className="submit-button"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Sending...' : 'Send Application'}
+              {isSubmitting ? "Sending..." : "Send Application"}
             </button>
           </form>
         </div>
 
-        <div >
-          
-          <div className="textFooterContainer" style={{width: "100%", gap: "10px", paddingBottom: "64px", paddingTop: "32px"}}>
-            <a style={{fontSize: "14px", textAlign: "center"}} href="https://www.google.com" className="textFotterLink">Privacy Policy</a>
-            <p className="textFotter" style={{fontSize: "16px", textAlign: "center"}}>YOYO© All Rights Reserved 2025</p>
+        <div>
+          <div
+            className="textFooterContainer"
+            style={{
+              width: "100%",
+              gap: "10px",
+              paddingBottom: "64px",
+              paddingTop: "32px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <a
+              style={{ fontSize: "15px", textAlign: "center" }}
+              href="https://www.google.com"
+              className="textFotterLink"
+            >
+              Privacy Policy
+            </a>
+            <p
+              className="textFotter"
+              style={{ fontSize: "15px", textAlign: "center" }}
+            >
+              YOYO© All Rights Reserved 2025
+            </p>
           </div>
         </div>
       </div>
