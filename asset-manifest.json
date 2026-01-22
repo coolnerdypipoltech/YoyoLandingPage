@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/YoyoLandingPage/static/css/main.6a3408a0.css",
-    "main.js": "/YoyoLandingPage/static/js/main.6f0de25b.js",
+    "main.css": "/YoyoLandingPage/static/css/main.c46f47e0.css",
+    "main.js": "/YoyoLandingPage/static/js/main.c962efd3.js",
     "static/js/453.b160e68a.chunk.js": "/YoyoLandingPage/static/js/453.b160e68a.chunk.js",
     "static/media/YOYO_VID_01.webm": "/YoyoLandingPage/static/media/YOYO_VID_01.1274206e925596b756da.webm",
     "static/media/Georgia.ttf": "/YoyoLandingPage/static/media/Georgia.2cb39f71bc8368652fdb.ttf",
@@ -9,12 +9,12 @@
     "static/media/Rabbit_icon_OFF@2x.png": "/YoyoLandingPage/static/media/Rabbit_icon_OFF@2x.d5208e1a267212a9a9d7.png",
     "static/media/Icon_web_rabbitred.png": "/YoyoLandingPage/static/media/Icon_web_rabbitred.fde4e911742263104312.png",
     "index.html": "/YoyoLandingPage/index.html",
-    "main.6a3408a0.css.map": "/YoyoLandingPage/static/css/main.6a3408a0.css.map",
-    "main.6f0de25b.js.map": "/YoyoLandingPage/static/js/main.6f0de25b.js.map",
+    "main.c46f47e0.css.map": "/YoyoLandingPage/static/css/main.c46f47e0.css.map",
+    "main.c962efd3.js.map": "/YoyoLandingPage/static/js/main.c962efd3.js.map",
     "453.b160e68a.chunk.js.map": "/YoyoLandingPage/static/js/453.b160e68a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a3408a0.css",
-    "static/js/main.6f0de25b.js"
+    "static/css/main.c46f47e0.css",
+    "static/js/main.c962efd3.js"
   ]
 }
