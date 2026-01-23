@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./tooltip.css";
 
-function Tooltip({ src, alt, text }) {
+function Tooltip({ src, alt, text, positionX = "-50%" }) {
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
@@ -41,7 +41,7 @@ function Tooltip({ src, alt, text }) {
     >
       <img src={src} alt={alt} className="tooltip-icon" />
       {isVisible && (
-        <div className="tooltip-box">
+        <div className="tooltip-box" style={{ transform: `translateX(${positionX})` }}>
           <div className="tooltip-text">{text}</div>
         </div>
       )}

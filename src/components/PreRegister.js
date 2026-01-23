@@ -166,14 +166,8 @@ function PreRegister() {
             alt="YoYo Logo"
           />
           <p
-            className="yoyoSubtitle"
-            style={{ paddingBottom: "20px", fontSize: "12px" }}
-          >
-            Enter the hidden loop
-          </p>
-          <p
             className="yoyoTitle"
-            style={{ paddingBottom: "10px", fontSize: "24px" }}
+            style={{ paddingBottom: "10px", fontSize: "24px", paddingTop: "20px" }}
           >
             YoYo Membership
           </p>
@@ -230,6 +224,7 @@ function PreRegister() {
               >
                 <p className="formtitle">Your age</p>
                 <Tooltip
+                  positionX="-40%"
                   src={logo}
                   alt="info icon"
                   text="Certain experiences are age-gated by design."
@@ -367,6 +362,7 @@ function PreRegister() {
               >
                 <p className="formtitle">City</p>
                 <Tooltip
+                  positionX="-30%"
                   src={logo}
                   alt="info icon"
                   text="So we know where to meet you."

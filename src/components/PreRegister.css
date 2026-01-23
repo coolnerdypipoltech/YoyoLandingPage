@@ -53,6 +53,7 @@ input[type=number] {
   line-height: 0px;
 }
 
+
 .form-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
@@ -159,16 +160,4 @@ input[type=number] {
   }
 }
 
-@media (max-width: 420px) {
-  .form-input {
-    font-size: 11px;
-  }
 
-  .submit-button {
-    font-size: 13px;
-  }
-
-  .message {
-    font-size: 11px;
-  }
-}

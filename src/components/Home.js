@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import logo from "../assets/Rabbit_icon_OFF@2x.png";
 import yoyoLogo from "../assets/Logo YOYO.png";
 import yoyovideo from "../assets/YOYO_VID_01.webm";
@@ -6,16 +6,40 @@ import iconweb from "../assets/Icon_web_rabbitred.png";
 import { useNavigate } from "react-router";
 function Home() {
   const navigate = useNavigate();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          videoRef.current.muted = true;
+          await videoRef.current.play();
+        } catch (error) {
+          console.log("Autoplay prevented:", error);
+          // Try to play on user interaction
+          const playOnInteraction = () => {
+            videoRef.current?.play();
+            document.removeEventListener('touchstart', playOnInteraction);
+            document.removeEventListener('click', playOnInteraction);
+          };
+          document.addEventListener('touchstart', playOnInteraction);
+          document.addEventListener('click', playOnInteraction);
+        }
+      }
+    };
+    playVideo();
+  }, []);
   return (
     <div className="App">
       <div className="videoOpacity" style={{ zIndex: "-2", opacity: 1 }}></div>
       <div className="videoContainer">
         <div className="videoOpacity"></div>
         <video
+          ref={videoRef}
           id="videoID"
+          muted
           playsInline
           autoPlay
-          muted
           loop
           webkit-playsinline="true"
           className="videoBody"
