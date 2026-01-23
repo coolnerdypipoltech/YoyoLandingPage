@@ -140,13 +140,16 @@ function PreRegister() {
 
   return (
     <div className="App">
+      <div className="videoOpacity" style={{ zIndex: "-2", opacity: 1 }}></div>
       <div className="videoContainer">
+        <div className="videoOpacity"></div>
         <video
           id="videoID"
           playsInline
           autoPlay
           muted
           loop
+          webkit-playsinline="true"
           className="videoBody"
         >
           <source src={yoyovideo} type="video/webm" />
@@ -154,6 +157,7 @@ function PreRegister() {
       </div>
 
       <div className="bodyContainer">
+        <><div className="spacer"></div></>
         <div className="mainContainer">
           <img
             src={yoyoLogo}
@@ -163,13 +167,13 @@ function PreRegister() {
           />
           <p
             className="yoyoSubtitle"
-            style={{ paddingBottom: "20px", fontSize: "11px" }}
+            style={{ paddingBottom: "20px", fontSize: "12px" }}
           >
             Enter the hidden loop
           </p>
           <p
             className="yoyoTitle"
-            style={{ paddingBottom: "25px", fontSize: "24px" }}
+            style={{ paddingBottom: "10px", fontSize: "24px" }}
           >
             YoYo Membership
           </p>
@@ -184,6 +188,8 @@ function PreRegister() {
             className="preregister-form"
             style={{ overflow: "visible" }}
             onSubmit={handleSubmit}
+            novalidate
+            noValidate
           >
             <div className="form-group" style={{ overflow: "visible" }}>
               <div
@@ -233,6 +239,7 @@ function PreRegister() {
                 type="number"
                 id="age"
                 name="age"
+                  
                 value={formData.age}
                 onChange={handleChange}
                 className="form-input"
@@ -257,7 +264,7 @@ function PreRegister() {
                 />
               </div>
               <input
-                type="text"
+                type="email"
                 id="email"
                 name="email"
                 value={formData.email}
@@ -285,6 +292,7 @@ function PreRegister() {
               </div>
               <input
                 type="number"
+                inputMode="numeric"
                 id="mobile"
                 name="mobile"
                 value={formData.mobile}
@@ -479,7 +487,7 @@ function PreRegister() {
               className="textFotter"
               style={{ fontSize: "15px", textAlign: "center" }}
             >
-              YOYO© All Rights Reserved 2025
+              YOYO© All Rights Reserved 2026
             </p>
           </div>
         </div>

@@ -8,20 +8,25 @@ function Home() {
   const navigate = useNavigate();
   return (
     <div className="App">
+      <div className="videoOpacity" style={{ zIndex: "-2", opacity: 1 }}></div>
       <div className="videoContainer">
+        <div className="videoOpacity"></div>
         <video
           id="videoID"
           playsInline
           autoPlay
           muted
           loop
+          webkit-playsinline="true"
           className="videoBody"
         >
           <source src={yoyovideo} type="video/webm" />
         </video>
       </div>
+      
 
       <div className="bodyContainer">
+        <div className="spacer"></div>
         <div className="mainContainer">
           <img src={yoyoLogo} className="yoyoLogo" alt="YoYo Logo" />
           <p className="yoyoTitle">You've Seen The Rabbit</p>
@@ -38,7 +43,7 @@ function Home() {
             Pre-Sign Up
           </button>
           <div className="textFooterContainer" style={{ paddingTop: "20px" }}>
-            <p className="textFotter">YOYO© All Rights Reserved 2025</p>
+            <p className="textFotter">YOYO© All Rights Reserved 2026</p>
             <a href="https://www.google.com" className="textFotterLink">
               Privacy Policy
             </a>

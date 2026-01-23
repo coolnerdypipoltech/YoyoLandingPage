@@ -5,19 +5,29 @@
   cursor: pointer;
   z-index: 9999;
   overflow: visible;
-    padding-bottom: 10px;
+  padding-bottom: 10px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .tooltip-icon {
-  width: 16px;
-  height: 16px;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
   opacity: 0.7;
-
   transition: opacity 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  padding: 4px;
+  margin: -4px;
 }
 
 .tooltip-icon:hover {
+  opacity: 1;
+}
+
+.tooltip-icon:active {
   opacity: 1;
 }
 
