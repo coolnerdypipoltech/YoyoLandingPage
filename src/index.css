@@ -63,7 +63,7 @@ code {
       }
 
       .spacer{
-        min-height: 16vh;
+        min-height: 13vh;
       }
 
       .mainContainer{
@@ -80,7 +80,6 @@ code {
         display: flex;
         justify-content: center;
         align-items: center;
-        position: absolute;
         bottom: 30px;
         flex-direction: column;
       }
@@ -93,14 +92,14 @@ code {
       }
 
       .textFotter{
-        font-family: "Georgia", serif;
-        font-size: 10px;
+        font-family: "Georgia ", serif;
+        font-size: 12px;
         color: #ffffff;
       }
 
       .textFotterLink{
-        font-family: "Georgia", serif;
-        font-size: 10px;
+        font-family: "Georgia ", serif;
+        font-size: 12px;
         text-decoration: none;
         color: #E05361;
       }
@@ -112,26 +111,30 @@ code {
       }
 
       .yoyoRabbit{
-        width: 70px;
+        width: 110px;
         height: auto;
         margin-top: 30px;
+        margin-bottom: 20px;
       }
 
       .cnpIcon{
-        width: 70px;
-        height: auto;
-        margin-bottom: 20px;
+        height: 10px;
+        margin-top: 10px;
+        width: 180px;
+        object-fit: cover;
       }
 
       .yoyoTitle{
         font-family: "Georgia ", serif;
-        font-size: 30px;
+        font-size: 18px;
         color: #ffffff;
         margin-top: 0px;
+        text-align: center;
+        width: 80%;
       }
 
       .yoyoSubtitle{
-        font-family: "Georgia", serif;
+        font-family: "Georgia ", serif;
         font-size: 10px;
         color: #ffffff;
         margin-top: 10px;
@@ -139,16 +142,43 @@ code {
       }
 
       .cnpSubtitle{
-        font-family: "Georgia", serif;
+        font-family: "Georgia ", serif;
         font-size: 14px;
+        color: #ffffff;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+        .yoyoSubtitle2{
+          font-family: "Georgia ", serif;
+        font-size: 18px;
         color: #ffffff;
         margin-top: 10px;
         text-align: center;
+        width: 80%;
+      }
+
+      @media (max-width: 540px) {
+        .yoyoTitle {
+          font-size: 16px;
+        }
+        .yoyoSubtitle2 {
+          font-size: 16px;
+        }
       }
 
       @media (max-width: 520px) {
         .yoyoTitle {
-          font-size: 24px;
+          font-size: 16px;
+        }
+
+              .spacer{
+          min-height: 21vh;
+        }
+
+        .yoyoSubtitle2{ 
+          font-size: 16px;
+          width: 80%;
         }
 
         .yoyoSubtitle {
@@ -156,21 +186,22 @@ code {
         }
 
         .yoyoLogo {
-          width: 110px;
+          width: 120px;
         }
 
         .yoyoRabbit {
-          width: 60px;
+          width: 95px;
         }
 
-        .cnpIcon {
-          width: 60px;
-        }
       }
 
       @media(max-width: 420px) {
         .yoyoTitle {
-          font-size: 18px;
+          font-size: 14px;
+        }
+
+        .yoyoSubtitle2{ 
+          font-size: 14px;
         }
 
         .yoyoLogo {
@@ -178,7 +209,7 @@ code {
         }
 
         .yoyoRabbit {
-          width: 50px;
+          width: 90px;
         }
 
         .textFooterContainer{
@@ -186,9 +217,6 @@ code {
           flex-direction: column;
         }
 
-        .cnpIcon {
-          width: 50px;
-        }
       }
 
       @font-face {
@@ -198,3 +226,90 @@ code {
         font-style: normal;
         font-display: swap;
       }
+
+
+
+      @media (min-width: 2000px) {
+        .spacer{
+          min-height: 16vh;
+        }
+
+        .yoyoTitle {
+          font-size: 30px;
+        }
+
+        .yoyoSubtitle2{ 
+          font-size: 30px ;
+        }
+
+        .yoyoLogo {
+          width: 150px;
+        }
+
+        .yoyoRabbit {
+          width: 120px;
+        }
+
+        .textFooterContainer{
+          width: 100%;
+          flex-direction: column;
+        }
+
+
+              .textFotter{
+
+        font-size: 20px;
+
+      }
+      .textFotterLink{
+
+        font-size: 20px;
+
+        
+
+      }
+    }
+
+
+      @media (min-width: 2500px) {
+        .spacer{
+          min-height: 25vh;
+        }
+
+        
+        .yoyoTitle {
+          font-size: 40px;
+        }
+
+        .yoyoSubtitle2{ 
+          font-size: 40px ;
+        }
+
+        .yoyoLogo {
+          width: 200px;
+        }
+
+        .yoyoRabbit {
+          width: 170px;
+        }
+
+        .textFooterContainer{
+          width: 100%;
+          flex-direction: column;
+        }
+
+
+              .textFotter{
+
+        font-size: 30px;
+
+      }
+      .textFotterLink{
+
+        font-size: 30px;
+
+        
+
+      }
+      }
+      

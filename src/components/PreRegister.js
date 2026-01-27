@@ -169,15 +169,8 @@ function PreRegister() {
             className="yoyoTitle"
             style={{ paddingBottom: "10px", fontSize: "24px", paddingTop: "20px" }}
           >
-            YoYo Membership
+            YoYo Membership | Pre-Sign Up
           </p>
-          <p
-            className="yoyoSubtitle"
-            style={{ paddingBottom: "20px", fontSize: "18px" }}
-          >
-            Pre-Sign Up
-          </p>
-
           <form
             className="preregister-form"
             style={{ overflow: "visible" }}
@@ -446,8 +439,7 @@ function PreRegister() {
                 paddingBottom: "30px",
               }}
             >
-              Every YoYo membership is reviewed by a human team. We'll be in
-              touch.
+              Every YoYo membership is reviewed by a human team. We’ll be in touch.
             </p>
             <button
               type="submit"
