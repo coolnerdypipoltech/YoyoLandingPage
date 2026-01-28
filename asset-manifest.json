@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/YoyoLandingPage/static/css/main.cf515236.css",
-    "main.js": "/YoyoLandingPage/static/js/main.312d79b8.js",
+    "main.css": "/YoyoLandingPage/static/css/main.df739774.css",
+    "main.js": "/YoyoLandingPage/static/js/main.84174654.js",
     "static/js/453.b160e68a.chunk.js": "/YoyoLandingPage/static/js/453.b160e68a.chunk.js",
     "static/media/YOYO_VID_01.webm": "/YoyoLandingPage/static/media/YOYO_VID_01.132a6da77c0a8532d999.webm",
     "static/media/Georgia.ttf": "/YoyoLandingPage/static/media/Georgia.2cb39f71bc8368652fdb.ttf",
     "static/media/Logo YOYO.png": "/YoyoLandingPage/static/media/Logo YOYO.d8627366d4d4e25dcc30.png",
+    "static/media/cnp_gris.png": "/YoyoLandingPage/static/media/cnp_gris.b32711c81dfb57bbdc44.png",
     "static/media/Icon_web_rabbitred.png": "/YoyoLandingPage/static/media/Icon_web_rabbitred.fde4e911742263104312.png",
     "index.html": "/YoyoLandingPage/index.html",
-    "main.cf515236.css.map": "/YoyoLandingPage/static/css/main.cf515236.css.map",
-    "main.312d79b8.js.map": "/YoyoLandingPage/static/js/main.312d79b8.js.map",
+    "main.df739774.css.map": "/YoyoLandingPage/static/css/main.df739774.css.map",
+    "main.84174654.js.map": "/YoyoLandingPage/static/js/main.84174654.js.map",
     "453.b160e68a.chunk.js.map": "/YoyoLandingPage/static/js/453.b160e68a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf515236.css",
-    "static/js/main.312d79b8.js"
+    "static/css/main.df739774.css",
+    "static/js/main.84174654.js"
   ]
 }
