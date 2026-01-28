@@ -118,10 +118,10 @@ code {
       }
 
       .cnpIcon{
-        height: 10px;
+        height: auto;
         margin-top: 10px;
-        width: 180px;
-        object-fit: cover;
+        width: 60px;
+        
       }
 
       .yoyoTitle{

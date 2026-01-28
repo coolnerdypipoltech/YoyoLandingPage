@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import logo from "../assets/cnplogo.png";
+import logo from "../assets/cnp_gris.png";
 import yoyoLogo from "../assets/Logo YOYO.png";
 import yoyovideo from "../assets/YOYO_VID_01.webm";
 import iconweb from "../assets/Icon_web_rabbitred.png";
@@ -75,7 +75,7 @@ function Home() {
         </div>
 
         <div className="footerContainer" style={{overflow: "visible"}}>
-          <p className="cnpSubtitle">By</p>
+          <p className="cnpSubtitle" style={{color: "#6E6E6E"}}>By</p>
           <img src={logo} className="cnpIcon" alt="CNP Icon"></img>
 
           <div className="textFooterContainer" style={{ paddingTop: "20px" }}>
