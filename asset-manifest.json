@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/YoyoLandingPage/static/css/main.6b712d12.css",
+    "main.css": "/YoyoLandingPage/static/css/main.5b2bf74e.css",
     "main.js": "/YoyoLandingPage/static/js/main.645e66e7.js",
     "static/js/453.b160e68a.chunk.js": "/YoyoLandingPage/static/js/453.b160e68a.chunk.js",
     "static/media/yoyo16.mp4": "/YoyoLandingPage/static/media/yoyo16.2d0bf4787acf836b1975.mp4",
@@ -10,12 +10,12 @@
     "static/media/cnp_gris.png": "/YoyoLandingPage/static/media/cnp_gris.b32711c81dfb57bbdc44.png",
     "static/media/Icon_web_rabbitred.png": "/YoyoLandingPage/static/media/Icon_web_rabbitred.fde4e911742263104312.png",
     "index.html": "/YoyoLandingPage/index.html",
-    "main.6b712d12.css.map": "/YoyoLandingPage/static/css/main.6b712d12.css.map",
+    "main.5b2bf74e.css.map": "/YoyoLandingPage/static/css/main.5b2bf74e.css.map",
     "main.645e66e7.js.map": "/YoyoLandingPage/static/js/main.645e66e7.js.map",
     "453.b160e68a.chunk.js.map": "/YoyoLandingPage/static/js/453.b160e68a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b712d12.css",
+    "static/css/main.5b2bf74e.css",
     "static/js/main.645e66e7.js"
   ]
 }
