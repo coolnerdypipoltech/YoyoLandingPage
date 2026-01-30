@@ -126,7 +126,16 @@ code {
 
       .yoyoTitle{
         font-family: "Georgia ", serif;
-        font-size: 18px;
+        font-size: 22px;
+        color: #ffffff;
+        margin-top: 0px;
+        text-align: center;
+        width: 80%;
+      }
+
+      .yoyoTitle2{
+        font-family: "Georgia ", serif;
+        font-size: 22px;
         color: #ffffff;
         margin-top: 0px;
         text-align: center;
@@ -160,7 +169,10 @@ code {
 
       @media (max-width: 540px) {
         .yoyoTitle {
-          font-size: 16px;
+          font-size: 24px;
+        }
+        .yoyoTitle2 {
+          font-size: 24px;
         }
         .yoyoSubtitle2 {
           font-size: 16px;
@@ -169,11 +181,7 @@ code {
 
       @media (max-width: 520px) {
         .yoyoTitle {
-          font-size: 16px;
-        }
-
-              .spacer{
-          min-height: 21vh;
+          font-size: 24px;
         }
 
         .yoyoSubtitle2{ 
@@ -197,7 +205,11 @@ code {
 
       @media(max-width: 420px) {
         .yoyoTitle {
-          font-size: 14px;
+          font-size: 22px;
+        }
+
+        .yoyoTitle2 {
+          font-size: 22px;
         }
 
         .yoyoSubtitle2{ 
@@ -235,7 +247,7 @@ code {
         }
 
         .yoyoTitle {
-          font-size: 30px;
+          font-size: 34px;
         }
 
         .yoyoSubtitle2{ 
@@ -278,7 +290,7 @@ code {
 
         
         .yoyoTitle {
-          font-size: 40px;
+          font-size: 46px;
         }
 
         .yoyoSubtitle2{ 

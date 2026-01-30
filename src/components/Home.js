@@ -1,12 +1,27 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/cnp_gris.png";
 import yoyoLogo from "../assets/Logo YOYO.png";
-import yoyovideo from "../assets/YOYO_VID_01.webm";
+import yoyovideoMobile from "../assets/YOYO_VID_01.webm";
+import yoyovideoDesktop from "../assets/yoyo16.mp4";
 import iconweb from "../assets/Icon_web_rabbitred.png";
 import { useNavigate } from "react-router";
 function Home() {
   const navigate = useNavigate();
   const videoRef = useRef(null);
+  
+  // Detectar si es móvil
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const playVideo = async () => {
@@ -44,7 +59,7 @@ function Home() {
           webkit-playsinline="true"
           className="videoBody"
         >
-          <source src={yoyovideo} type="video/webm" />
+          <source src={isMobile ? yoyovideoMobile : yoyovideoDesktop} type={isMobile ? "video/webm" : "video/mp4"} />
         </video>
       </div>
 

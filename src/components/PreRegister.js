@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./PreRegister.css";
 import yoyoLogo from "../assets/Logo YOYO.png";
 import logo from "../assets/Icon_Tooltip.png";
-import yoyovideo from "../assets/YOYO_VID_01.webm";
+import yoyovideoMobile from "../assets/YOYO_VID_01.webm";
+import yoyovideoDesktop from "../assets/yoyo16.mp4";
 import Tooltip from "./tooltip";
 
 function PreRegister() {
+
+    const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 768);
+      };
+      
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -152,7 +167,7 @@ function PreRegister() {
           webkit-playsinline="true"
           className="videoBody"
         >
-          <source src={yoyovideo} type="video/webm" />
+          <source src={isMobile ? yoyovideoMobile : yoyovideoDesktop} type={isMobile ? "video/webm" : "video/mp4"} />
         </video>
       </div>
 
@@ -165,12 +180,24 @@ function PreRegister() {
             style={{ paddingBottom: "0px" }}
             alt="YoYo Logo"
           />
-          <p
-            className="yoyoTitle"
-            style={{ paddingBottom: "10px", fontSize: "24px", paddingTop: "20px" }}
+        {!isMobile ? <p
+            className="yoyoTitle2"
+            style={{ paddingBottom: "10px", paddingTop: "20px" }}
           >
             YoYo Membership | Pre-Sign Up
+          </p> : <><p
+            className="yoyoTitle2"
+            style={{ paddingBottom: "10px", paddingTop: "20px" }}
+          >
+            YoYo Membership
           </p>
+          <p
+            className="yoyoTitle2"
+            style={{ paddingBottom: "10px", paddingTop: "0px" }}
+          >
+            Pre-Sign Up
+          </p></>}
+          
           <form
             className="preregister-form"
             style={{ overflow: "visible" }}
