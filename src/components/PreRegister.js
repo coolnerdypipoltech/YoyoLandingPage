@@ -86,7 +86,7 @@ function PreRegister() {
 
     try {
       const response = await fetch(
-        "https://admin.yoyotheclub.com/api/v1/pre-registration",
+        process.env.REACT_APP_PRE_REGISTRATION_URL,
         {
           method: "POST",
           headers: {
