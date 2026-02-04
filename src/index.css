@@ -30,10 +30,12 @@ code {
       }
 
       .bodyContainer {
-        width: 100dvw;
-        height: 100dvh;
+        width: 100vw;
+        height: 100vh;
         overflow-x: hidden;
         background-size: cover;
+        position: absolute;
+        z-index: 5;
       }
 
       .videoBody {
@@ -46,9 +48,9 @@ code {
       .videoOpacity{
         opacity: 0.9;
         background-color: #222222;
-        z-index: 0;
+        z-index: 1;
         position: absolute;
-        width: 100dvw;
+        width: 100vw;
         height: 100vh;
       }
 
@@ -59,7 +61,7 @@ code {
         align-items: center;
         width: 100dvw;
         height: 100vh;
-        z-index: -1;
+        z-index: 1;
       }
 
       .spacer{
@@ -72,7 +74,8 @@ code {
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-
+        overflow-y: visible;
+        height: auto;
       }
 
       .footerContainer{

@@ -46,7 +46,7 @@ function Home() {
   }, []);
   return (
     <div className="App">
-      <div className="videoOpacity" style={{ zIndex: "-2", opacity: 1 }}></div>
+      <div className="videoOpacity" style={{ zIndex: "0", opacity: 1 }}></div>
       <div className="videoContainer">
         <div className="videoOpacity"></div>
         <video

@@ -155,7 +155,7 @@ function PreRegister() {
 
   return (
     <div className="App">
-      <div className="videoOpacity" style={{ zIndex: "-2", opacity: 1 }}></div>
+      <div className="videoOpacity" style={{ zIndex: "0", opacity: 1 }}></div>
       <div className="videoContainer">
         <div className="videoOpacity"></div>
         <video
@@ -223,6 +223,7 @@ function PreRegister() {
               </div>
 
               <input
+                autocomplete="off"
                 type="text"
                 id="name"
                 name="name"
@@ -254,7 +255,7 @@ function PreRegister() {
                 type="number"
                 id="age"
                 name="age"
-                  
+                  autocomplete="off"
                 value={formData.age}
                 onChange={handleChange}
                 className="form-input"
@@ -282,6 +283,7 @@ function PreRegister() {
                 type="email"
                 id="email"
                 name="email"
+                autocomplete="off"
                 value={formData.email}
                 onChange={handleChange}
                 className="form-input"
@@ -306,6 +308,7 @@ function PreRegister() {
                 />
               </div>
               <input
+              autocomplete="off"
                 type="number"
                 inputMode="numeric"
                 id="mobile"
@@ -334,6 +337,7 @@ function PreRegister() {
                 />
               </div>
               <input
+              autocomplete="off"
                 type="text"
                 id="instagram"
                 name="instagram"
@@ -361,6 +365,7 @@ function PreRegister() {
                 />
               </div>
               <input
+              autocomplete="off"
                 type="text"
                 id="country"
                 name="country"
@@ -389,6 +394,7 @@ function PreRegister() {
                 />
               </div>
               <input
+                autocomplete="off"
                 type="text"
                 id="city"
                 name="city"
@@ -416,6 +422,7 @@ function PreRegister() {
                 />
               </div>
               <input
+                autocomplete="off"
                 type="text"
                 id="work"
                 name="work"
@@ -443,6 +450,7 @@ function PreRegister() {
                 />
               </div>
               <input
+                autocomplete="off"
                 type="text"
                 id="favorite_spots"
                 name="favorite_spots"
