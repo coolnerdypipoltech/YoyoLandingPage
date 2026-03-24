@@ -102,6 +102,7 @@ function PreRegister() {
             country: formData.country,
             work: formData.work,
             favorite_spots: formData.favorite_spots,
+            linkedin: formData.linkedin,
           }),
         },
       );
@@ -119,6 +120,7 @@ function PreRegister() {
           work: "",
           favorite_spots: "",
           city: "",
+          linkedin: "",
         });
 
         // Re-enable submit button after 3 seconds
@@ -133,7 +135,11 @@ function PreRegister() {
           if (errorData.message.mobile_number) {
             setMessage(errorData.message.mobile_number);
           } else {
-            setMessage("Registration error. Please try again.");
+            if (errorData.message.linkedin) {
+              setMessage(errorData.message.linkedin);
+            } else {
+              setMessage("Registration error. Please try again.");
+            }
           }
         }
 
@@ -342,6 +348,35 @@ function PreRegister() {
                 id="instagram"
                 name="instagram"
                 value={formData.instagram}
+                onChange={handleChange}
+                className="form-input"
+                disabled={isSubmitting}
+              />
+            </div>
+
+            <div className="form-group" style={{ overflow: "visible" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  overflow: "visible",
+                }}
+              >
+                <p className="formtitle">Linkedin</p>
+                <Tooltip
+                  positionX="-40%"
+                  src={logo}
+                  alt="info icon"
+                  text="It gives us a fuller picture of your professional world and creative landscape."
+                />
+              </div>
+              <input
+                type="text"
+                id="linkedin"
+                name="linkedin"
+                  autocomplete="off"
+                value={formData.linkedin}
                 onChange={handleChange}
                 className="form-input"
                 disabled={isSubmitting}
