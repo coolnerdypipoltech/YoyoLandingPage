@@ -11,6 +11,7 @@ function App() {
         <Route path="/presignup" element={<PreRegister />} />
         <Route path="/YoyoLandingPage" element={<Home />} />
         <Route path="/YoyoLandingPage/presignup" element={<PreRegister />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </Router>
   );
