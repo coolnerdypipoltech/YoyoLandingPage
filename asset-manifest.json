@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.a084b36a.css",
-    "main.js": "/static/js/main.24d4557a.js",
-    "static/js/453.b160e68a.chunk.js": "/static/js/453.b160e68a.chunk.js",
-    "static/media/video_website_desktop.mp4": "/static/media/video_website_desktop.a36752e039457e310fc1.mp4",
-    "static/media/InstrumentSans-SemiBoldItalic.ttf": "/static/media/InstrumentSans-SemiBoldItalic.0af5d159be05b9ffbb87.ttf",
-    "static/media/InstrumentSerif-Regular.ttf": "/static/media/InstrumentSerif-Regular.5b7bae350adc2a2de079.ttf",
-    "static/media/InstrumentSans-Medium.ttf": "/static/media/InstrumentSans-Medium.5932cabd0b9d5cd2a9cf.ttf",
-    "static/media/InstrumentSans-Bold.ttf": "/static/media/InstrumentSans-Bold.7f35fda761f1f2b72f00.ttf",
-    "static/media/InstrumentSans-Regular.ttf": "/static/media/InstrumentSans-Regular.00006c503b467b4975ac.ttf",
-    "static/media/Logo YOYO.png": "/static/media/Logo YOYO.c9dac00344b1da7fbbe0.png",
-    "static/media/YOYObyCNP.svg": "/static/media/YOYObyCNP.9aabe83d8f93a8faa00f203517ffcab0.svg",
-    "static/media/Icon_rabbit.svg": "/static/media/Icon_rabbit.02a67ad03637a3db161dfd64b1aa8066.svg",
-    "static/media/tooltip.svg": "/static/media/tooltip.fa4daee72d21d9ab320ef00cb58a9985.svg",
-    "index.html": "/index.html",
-    "static/media/Back.svg": "/static/media/Back.6b16d9fd807f0e2d641fd653a233bfe6.svg",
-    "main.a084b36a.css.map": "/static/css/main.a084b36a.css.map",
-    "main.24d4557a.js.map": "/static/js/main.24d4557a.js.map",
-    "453.b160e68a.chunk.js.map": "/static/js/453.b160e68a.chunk.js.map"
+    "main.css": "/YoyoLandingPage/static/css/main.52a77d67.css",
+    "main.js": "/YoyoLandingPage/static/js/main.c1eca729.js",
+    "static/js/453.b160e68a.chunk.js": "/YoyoLandingPage/static/js/453.b160e68a.chunk.js",
+    "static/media/video_website_desktop.mp4": "/YoyoLandingPage/static/media/video_website_desktop.a36752e039457e310fc1.mp4",
+    "static/media/InstrumentSans-SemiBoldItalic.ttf": "/YoyoLandingPage/static/media/InstrumentSans-SemiBoldItalic.0af5d159be05b9ffbb87.ttf",
+    "static/media/InstrumentSerif-Regular.ttf": "/YoyoLandingPage/static/media/InstrumentSerif-Regular.5b7bae350adc2a2de079.ttf",
+    "static/media/InstrumentSans-Medium.ttf": "/YoyoLandingPage/static/media/InstrumentSans-Medium.5932cabd0b9d5cd2a9cf.ttf",
+    "static/media/InstrumentSans-Bold.ttf": "/YoyoLandingPage/static/media/InstrumentSans-Bold.7f35fda761f1f2b72f00.ttf",
+    "static/media/InstrumentSans-Regular.ttf": "/YoyoLandingPage/static/media/InstrumentSans-Regular.00006c503b467b4975ac.ttf",
+    "static/media/Logo YOYO.png": "/YoyoLandingPage/static/media/Logo YOYO.c9dac00344b1da7fbbe0.png",
+    "static/media/YOYObyCNP.svg": "/YoyoLandingPage/static/media/YOYObyCNP.9aabe83d8f93a8faa00f203517ffcab0.svg",
+    "static/media/Icon_rabbit.svg": "/YoyoLandingPage/static/media/Icon_rabbit.02a67ad03637a3db161dfd64b1aa8066.svg",
+    "static/media/tooltip.svg": "/YoyoLandingPage/static/media/tooltip.fa4daee72d21d9ab320ef00cb58a9985.svg",
+    "index.html": "/YoyoLandingPage/index.html",
+    "static/media/Back.svg": "/YoyoLandingPage/static/media/Back.6b16d9fd807f0e2d641fd653a233bfe6.svg",
+    "main.52a77d67.css.map": "/YoyoLandingPage/static/css/main.52a77d67.css.map",
+    "main.c1eca729.js.map": "/YoyoLandingPage/static/js/main.c1eca729.js.map",
+    "453.b160e68a.chunk.js.map": "/YoyoLandingPage/static/js/453.b160e68a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a084b36a.css",
-    "static/js/main.24d4557a.js"
+    "static/css/main.52a77d67.css",
+    "static/js/main.c1eca729.js"
   ]
 }
