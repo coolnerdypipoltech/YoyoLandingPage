@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/YoyoLandingPage/static/css/main.20ee6a24.css",
-    "main.js": "/YoyoLandingPage/static/js/main.f6317936.js",
+    "main.js": "/YoyoLandingPage/static/js/main.4ba11a8c.js",
     "static/js/453.b160e68a.chunk.js": "/YoyoLandingPage/static/js/453.b160e68a.chunk.js",
     "static/media/video_website_desktop.mp4": "/YoyoLandingPage/static/media/video_website_desktop.a36752e039457e310fc1.mp4",
     "static/media/InstrumentSans-SemiBoldItalic.ttf": "/YoyoLandingPage/static/media/InstrumentSans-SemiBoldItalic.0af5d159be05b9ffbb87.ttf",
@@ -16,11 +16,11 @@
     "index.html": "/YoyoLandingPage/index.html",
     "static/media/Back.svg": "/YoyoLandingPage/static/media/Back.6b16d9fd807f0e2d641fd653a233bfe6.svg",
     "main.20ee6a24.css.map": "/YoyoLandingPage/static/css/main.20ee6a24.css.map",
-    "main.f6317936.js.map": "/YoyoLandingPage/static/js/main.f6317936.js.map",
+    "main.4ba11a8c.js.map": "/YoyoLandingPage/static/js/main.4ba11a8c.js.map",
     "453.b160e68a.chunk.js.map": "/YoyoLandingPage/static/js/453.b160e68a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.20ee6a24.css",
-    "static/js/main.f6317936.js"
+    "static/js/main.4ba11a8c.js"
   ]
 }
